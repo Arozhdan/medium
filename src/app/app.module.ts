@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ArticleModule } from './article/article.module';
 import { AuthModule } from './auth/auth.module';
 import { GlobalFeedModule } from './global-feed/global-feed.module';
 import { PopularFeedModule } from './popular-feed/popular-feed.module';
@@ -35,6 +36,7 @@ import { YourFeedModule } from './your-feed/your-feed.module';
     GlobalFeedModule,
     YourFeedModule,
     PopularFeedModule,
+    ArticleModule,
   ],
   providers: [
     PersistanceService,
