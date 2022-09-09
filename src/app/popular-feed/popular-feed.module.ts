@@ -5,12 +5,12 @@ import { BannerModule } from '../shared/modules/banner/banner.module';
 import { FeedTogglerModule } from '../shared/modules/feed-toggler/feed-toggler.module';
 import { FeedModule } from '../shared/modules/feed/feed.module';
 import { PopularTagsModule } from '../shared/modules/popular-tags/popular-tags.module';
-import { GlobalFeedComponent } from './components/global-feed/global-feed.component';
+import { PopularFeedComponent } from './components/popular-feed/popular-feed.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: GlobalFeedComponent,
+    path: 'tags/:slug',
+    component: PopularFeedComponent,
   },
 ];
 
@@ -23,6 +23,6 @@ const routes: Routes = [
     PopularTagsModule,
     FeedTogglerModule,
   ],
-  declarations: [GlobalFeedComponent],
+  declarations: [PopularFeedComponent],
 })
-export class GlobalFeedModule {}
+export class PopularFeedModule {}
