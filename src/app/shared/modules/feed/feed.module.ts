@@ -11,6 +11,7 @@ import { FeedComponent } from './components/feed/feed.component';
 import { FeedService } from './services/feed.service';
 import { GetFeedEffect } from './store/effects/get-feed.effect';
 import { reducers } from './store/reducers';
+import { AddToFavoritesModule } from '../add-to-favorites/add-to-favorites.module';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { reducers } from './store/reducers';
     LoadingModule,
     PaginationModule,
     TagListModule,
+    AddToFavoritesModule,
   ],
   declarations: [FeedComponent],
   exports: [FeedComponent],

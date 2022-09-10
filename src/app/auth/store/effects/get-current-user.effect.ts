@@ -9,14 +9,14 @@ import {
   getCurrentUserFailureAction,
   getCurrentUserSuccessAction,
 } from '../actions/get-current-user.action';
-import { PersistanceService } from '../../../shared/services/persistance.service';
+import { PersistenceService } from '../../../shared/services/persistence.service';
 
 @Injectable()
 export class GetCurrentUserEffect {
   constructor(
     private actions$: Actions,
     private authService: AuthService,
-    private persistanceService: PersistanceService
+    private persistanceService: PersistenceService
   ) {}
 
   getCurrentUser$ = createEffect(() =>

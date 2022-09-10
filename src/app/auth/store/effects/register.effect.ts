@@ -11,14 +11,14 @@ import {
   registerFailureAction,
   registerSuccessAction,
 } from '../actions/register.action';
-import { PersistanceService } from '../../../shared/services/persistance.service';
+import { PersistenceService } from '../../../shared/services/persistence.service';
 
 @Injectable()
 export class RegisterEffect {
   constructor(
     private actions$: Actions,
     private authService: AuthService,
-    private persistanceService: PersistanceService,
+    private persistanceService: PersistenceService,
     private router: Router
   ) {}
   register$ = createEffect(() =>

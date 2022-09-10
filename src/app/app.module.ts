@@ -11,12 +11,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ArticleModule } from './article/article.module';
 import { AuthModule } from './auth/auth.module';
+import { CreateArticleModule } from './create-article/create-article.module';
 import { GlobalFeedModule } from './global-feed/global-feed.module';
 import { PopularFeedModule } from './popular-feed/popular-feed.module';
 import { TopBarModule } from './shared/modules/top-bar/top-bar.module';
 import { AuthInterceptor } from './shared/services/authinterceptor.service';
-import { PersistanceService } from './shared/services/persistance.service';
+import { PersistenceService } from './shared/services/persistence.service';
 import { YourFeedModule } from './your-feed/your-feed.module';
+import { EditArticleModule } from './edit-article/edit-article.module';
+import { SettingsModule } from './settings/settings.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -36,10 +39,13 @@ import { YourFeedModule } from './your-feed/your-feed.module';
     GlobalFeedModule,
     YourFeedModule,
     PopularFeedModule,
+    CreateArticleModule,
     ArticleModule,
+    EditArticleModule,
+    SettingsModule,
   ],
   providers: [
-    PersistanceService,
+    PersistenceService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

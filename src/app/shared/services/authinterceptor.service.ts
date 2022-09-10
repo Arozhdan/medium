@@ -6,11 +6,11 @@ import {
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { PersistanceService } from './persistance.service';
+import { PersistenceService } from './persistence.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private persistanceService: PersistanceService) {}
+  constructor(private persistanceService: PersistenceService) {}
   intercept(
     request: HttpRequest<any>,
     next: HttpHandler

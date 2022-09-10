@@ -11,14 +11,14 @@ import {
   loginFailureAction,
   loginSuccessAction,
 } from '../actions/login.action';
-import { PersistanceService } from '../../../shared/services/persistance.service';
+import { PersistenceService } from '../../../shared/services/persistence.service';
 
 @Injectable()
 export class LoginEffect {
   constructor(
     private actions$: Actions,
     private authService: AuthService,
-    private persistanceService: PersistanceService,
+    private persistanceService: PersistenceService,
     private router: Router
   ) {}
 
