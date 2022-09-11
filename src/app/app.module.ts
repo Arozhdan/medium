@@ -20,6 +20,7 @@ import { PersistenceService } from './shared/services/persistence.service';
 import { YourFeedModule } from './your-feed/your-feed.module';
 import { EditArticleModule } from './edit-article/edit-article.module';
 import { SettingsModule } from './settings/settings.module';
+import { UserProfileModule } from './user-profile/user-profile.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -43,6 +44,7 @@ import { SettingsModule } from './settings/settings.module';
     ArticleModule,
     EditArticleModule,
     SettingsModule,
+    UserProfileModule,
   ],
   providers: [
     PersistenceService,

@@ -2,31 +2,31 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
-import { ArticleService as SharedArticleService } from 'src/app/shared/services/article.service';
-import { ArticleInterface } from 'src/app/shared/types/article.interface';
 import {
-  getArticleAction,
-  getArticleFailureAction,
-  getArticleSuccessAction,
-} from '../actions/get-article.action';
+  getUserProfileAction,
+  getUserProfileFailureAction,
+  getUserProfileSuccessAction,
+} from '../actions/get-user-profile.action';
+import { UserProfileService } from '../../services/user-profile.service';
+import { ProfileInterface } from '../../../shared/types/profile.interface';
 
 @Injectable()
-export class GetArticleEffect {
+export class GetUserProfileEffect {
   constructor(
     private actions$: Actions,
-    private articleService: SharedArticleService
+    private userProfileService: UserProfileService
   ) {}
 
-  getArticle$ = createEffect(() =>
+  getUserProfile = createEffect(() =>
     this.actions$.pipe(
-      ofType(getArticleAction),
+      ofType(getUserProfileAction),
       switchMap(({ slug }) => {
-        return this.articleService.getArticle(slug).pipe(
-          map((article: ArticleInterface) => {
-            return getArticleSuccessAction({ article });
+        return this.userProfileService.getUserProfile(slug).pipe(
+          map((userProfile: ProfileInterface) => {
+            return getUserProfileSuccessAction({ userProfile });
           }),
           catchError(() => {
-            return of(getArticleFailureAction());
+            return of(getUserProfileFailureAction());
           })
         );
       })
